@@ -127,7 +127,7 @@ C z=0
                 B=2*g_prime*qsg;                                  ! buoyancy flux per unit length and
                                                                   ! multiplied by two (against the glacier)
 
-                gP=(2.6*(B**(2/3)))./(k*delZ(k));                 ! plume buoyancy @ z
+                gP=(2.6*(B**(2/3)))./(k*drF(k));                  ! plume buoyancy @ z
                 wP=1.8*(B**(1/3));                                ! plume velocity @ z
                 QP(=(B/gP);                                       ! plume flow rate in m^2/s @ z
                 tempA=theta(I,J,k,bi,bj);                         ! ambient temperature @ z
@@ -147,7 +147,7 @@ C start loop over z (from seafloor to the free surface )
                         saltPo=saltP                              ! store previous velocity @ z-1
                         QPo=QP                                    ! store previous flow fate @ z-1
                         rLoc=rhoanoma(I,J,pk,bi,bj)+rhoConst      ! update local density @ z
-                        gP=(2.6*(B**(2/3)))./(pk*delZ(pk));       ! plume buoyancy @ z
+                        gP=(2.6*(B**(2/3)))./(pk*drF(pk));       ! plume buoyancy @ z
                         wP=1.8*(B**(1/3));                        ! plume velocity @ z
 
                         QP(=(B/gP);                               ! plume flow rate in m^2/s @ z
